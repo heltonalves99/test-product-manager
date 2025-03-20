@@ -9,7 +9,7 @@ export class CreateProductDTO {
   @IsEnum(ProductCategory)
   category: string;
 
-  description: string;
+  description?: string;
 
   @IsNotEmpty()
   @IsNumber()
