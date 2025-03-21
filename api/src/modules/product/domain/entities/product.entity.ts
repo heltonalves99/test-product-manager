@@ -1,11 +1,11 @@
-import { ProductCategory } from '@prisma/client';
+import { ProductCategory, Prisma } from '@prisma/client';
 
 export class Product {
   id: number;
   name: string;
   category: ProductCategory;
-  description?: string;
-  price: number;
+  description?: string | null;
+  price: Prisma.Decimal;
   stockQuantity: number;
   createdAt: Date;
   updatedAt: Date;
