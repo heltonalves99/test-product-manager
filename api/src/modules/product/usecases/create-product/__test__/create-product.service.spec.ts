@@ -1,4 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { ProductCategory, Prisma } from '@prisma/client';
 import { CreateProductService } from '../create-product.service';
 import {
   ProductsRepository,
@@ -6,7 +7,6 @@ import {
 } from '@modules/product/domain/repositories/products.repository';
 import { CreateProductDTO } from '@modules/product/domain/dtos/create-product.dto';
 import { Product } from '@modules/product/domain/entities/product.entity';
-import { ProductCategory } from '@prisma/client';
 
 describe('CreateProductService', () => {
   let service: CreateProductService;
@@ -47,7 +47,7 @@ describe('CreateProductService', () => {
       id: 1,
       name: productData.name,
       category: ProductCategory.ELECTRONICS,
-      price: productData.price,
+      price: new Prisma.Decimal(productData.price),
       stockQuantity: productData.stockQuantity,
       createdAt: new Date(),
       updatedAt: new Date(),

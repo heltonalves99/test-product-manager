@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
+import { ProductCategory, Prisma } from '@prisma/client';
 import * as request from 'supertest';
 import { CreateProductController } from '../create-product.controller';
 import { CreateProductService } from '../create-product.service';
 import { CreateProductDTO } from '@modules/product/domain/dtos/create-product.dto';
 import { Product } from '@modules/product/domain/entities/product.entity';
-import { ProductCategory } from '@prisma/client';
 import {
   ProductsRepository,
   ProductsRepositoryToken,
@@ -65,7 +65,7 @@ describe('CreateProductController (INTEGRATION)', () => {
       id: 1,
       name: productData.name,
       category: ProductCategory.ELECTRONICS,
-      price: productData.price,
+      price: new Prisma.Decimal(productData.price),
       stockQuantity: productData.stockQuantity,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -80,6 +80,7 @@ describe('CreateProductController (INTEGRATION)', () => {
       .expect((response) => {
         expect(response.body).toEqual({
           ...expectedProduct,
+          price: expectedProduct.price.toJSON(),
           createdAt: expectedProduct.createdAt.toISOString(),
           updatedAt: expectedProduct.updatedAt.toISOString(),
         });
