@@ -5,7 +5,7 @@ import { CreateProductController } from '../create-product.controller';
 import { CreateProductService } from '../create-product.service';
 import { CreateProductDTO } from '@modules/product/domain/dtos/create-product.dto';
 import { Product } from '@modules/product/domain/entities/product.entity';
-import { ProductCategory } from '@modules/product/domain/enums/product-category.enum';
+import { ProductCategory } from '@prisma/client';
 import {
   ProductsRepository,
   ProductsRepositoryToken,

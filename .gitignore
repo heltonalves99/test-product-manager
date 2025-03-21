@@ -8,3 +8,6 @@ logs
 # temp directory
 .temp
 .tmp
+
+# dotenv environment variable files
+.env.local

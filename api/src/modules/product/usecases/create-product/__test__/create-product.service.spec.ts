@@ -6,7 +6,7 @@ import {
 } from '@modules/product/domain/repositories/products.repository';
 import { CreateProductDTO } from '@modules/product/domain/dtos/create-product.dto';
 import { Product } from '@modules/product/domain/entities/product.entity';
-import { ProductCategory } from '@modules/product/domain/enums/product-category.enum';
+import { ProductCategory } from '@prisma/client';
 
 describe('CreateProductService', () => {
   let service: CreateProductService;

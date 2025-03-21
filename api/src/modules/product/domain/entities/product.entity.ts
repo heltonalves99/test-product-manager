@@ -1,4 +1,4 @@
-import { ProductCategory } from '../enums/product-category.enum';
+import { ProductCategory } from '@prisma/client';
 
 export class Product {
   id: number;

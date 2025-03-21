@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateProductDTO } from '@modules/product/domain/dtos/create-product.dto';
 import { Product } from '@modules/product/domain/entities/product.entity';
 import { ProductsRepository } from '@modules/product/domain/repositories/products.repository';
-import { ProductCategory } from '@modules/product/domain/enums/product-category.enum';
+import { ProductCategory } from '@prisma/client';
 
 @Injectable()
 class ProductsRepositoryImpl implements ProductsRepository {

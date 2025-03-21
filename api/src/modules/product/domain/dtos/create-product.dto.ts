@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, IsEnum, Min } from 'class-validator';
-import { ProductCategory } from '../enums/product-category.enum';
+import { ProductCategory } from '@prisma/client';
 
 export class CreateProductDTO {
   @IsNotEmpty()
