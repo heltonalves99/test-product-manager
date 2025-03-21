@@ -5,4 +5,5 @@ export const ProductsRepositoryToken = 'ProductsRepository';
 
 export interface ProductsRepository {
   create(data: CreateProductDTO): Promise<Product>;
+  list(): Promise<Product[]>;
 }
