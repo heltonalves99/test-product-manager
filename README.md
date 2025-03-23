@@ -79,6 +79,27 @@ The `api` directory contains the backend code for the application. It is built u
       },
       ...
     ]
+
+- `PUT /products/:id`: Updates an existing product.
+  - **Request Body**:
+    ```json
+    {
+      "name": "string",
+      "price": "number",
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "id": "string",
+      "name": "string",
+      "category": "string",
+      "description": "string",
+      "price": "number",
+      "stockQuantity": "number",
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
     ```
 
 ### 1. Configure Environment Variables
