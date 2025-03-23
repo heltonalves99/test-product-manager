@@ -8,4 +8,5 @@ export interface ProductsRepository {
   create(data: CreateProductDTO): Promise<Product>;
   list(): Promise<Product[]>;
   update(id: number, data: UpdateProductDTO): Promise<Product>;
+  findOne(id: number): Promise<Product | null>;
 }

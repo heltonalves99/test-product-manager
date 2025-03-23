@@ -53,6 +53,14 @@ class ProductsRepositoryImpl implements ProductsRepository {
       },
     });
   }
+
+  async findOne(id: number): Promise<Product | null> {
+    const product = await this.prisma.product.findUnique({
+      where: { id },
+    });
+
+    return product;
+  }
 }
 
 export { ProductsRepositoryImpl };

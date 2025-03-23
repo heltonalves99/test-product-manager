@@ -63,6 +63,21 @@ The `api` directory contains the backend code for the application. It is built u
     }
     ```
 
+- `GET /products/:id`: Retrieves a product by its ID.
+  - **Response**:
+    ```json
+    {
+      "id": "string",
+      "name": "string",
+      "category": "string",
+      "description": "string",
+      "price": "number",
+      "stockQuantity": "number",
+      "createdAt": "string",
+      "updatedAt": "string"
+    }
+    ```
+
 - `GET /products`: Lists all products.
   - **Response**:
     ```json
