@@ -61,4 +61,9 @@ describe('GetProductController', () => {
       updatedAt: mockProduct.updatedAt.toISOString(),
     });
   });
+
+  it('should return 404 if product is not found', async () => {
+    mockGetProductService.execute.mockResolvedValue(null);
+    await request(app.getHttpServer()).get('/products/2').expect(404);
+  });
 });
