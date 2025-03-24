@@ -77,6 +77,14 @@ The `api` directory contains the backend code for the application. It is built u
       "updatedAt": "string"
     }
     ```
+  - **404 Response**:
+    ```json
+    {
+      "message": "Product not found",
+      "error": "Not Found",
+      "statusCode": 404
+    }
+    ```
 
 - `GET /products`: Lists all products.
   - **Response**:
